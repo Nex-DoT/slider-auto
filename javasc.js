@@ -5,7 +5,8 @@ let time;
 const countEr = document.createElement('div');
 const countEr1 = document.createElement('div');
 const countEr2 = document.createElement('div');
-const bar = document.querySelector('.bar').append(countEr ,countEr1,countEr2);
+const countEr3 = document.createElement('div');
+const bar = document.querySelector('.bar').append(countEr ,countEr1,countEr2,countEr3);
 const barbalon = document.querySelector('.bar').children;
 console.log(barbalon);
 

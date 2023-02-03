@@ -16,6 +16,7 @@
 }
 body{
     background-color: black;
+    overflow: hidden;
 
 }
 
@@ -31,11 +32,13 @@ body{
     left: 0;
     visibility: hidden;
     opacity: 0;
+    transform: translateY(100px);
     scale: 0.89;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 .slider .slide.active{
     position: relative;
+    transform: translateY(0px);
     scale: 1;
     visibility: visible;
     opacity: 1;
@@ -81,9 +84,18 @@ body{
     background-size: cover;
     object-fit: cover;
 }
+.slider .slide .img3{
+    width: 100%;
+    height: 100%;
+    background: url(./img/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
 
 .slider .slide .img .text,
 .slider .slide .img1 .text,
+.slider .slide .img3 .text,
 .slider .slide .img2 .text{
     width: 100%;
     height: 300px;
@@ -98,14 +110,17 @@ body{
     flex-flow: column;
 }
 .slider .slide .img .text div,
+.slider .slide .img3 .text div,
 .slider .slide .img1 .text div,
 .slider .slide .img2 .text div{
     margin: 50px;
 }
 .slider .slide .img .text div p,
 .slider .slide .img1 .text div p,
+.slider .slide .img3 .text div p,
 .slider .slide .img2 .text div p{
-   border: 1px solid white;
+   border: 1px solid yellow;
+   color: yellow;
    width: 120px;
    padding: 1px 5px;
    height: 40px;
@@ -119,11 +134,12 @@ body{
 }
 .slider .slide .img .text div p:hover,
 .slider .slide .img1 .text div p:hover,
+.slider .slide .img3 .text div p:hover,
 .slider .slide .img2 .text div p:hover{
-    background-color: white;
-    color: black;
+    background-color: yellow;
+    color: #000000;
 }
-.slider .icon{
+.icon{
     width: 100%;
     position: absolute;
     top: 50%;
@@ -131,7 +147,7 @@ body{
     align-items: center;
     justify-content: space-between;
 }
-.slider .icon i{
+.icon i{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -146,7 +162,7 @@ body{
     scale: 0.80;
     z-index: 100;
 }
-.slider .icon i:hover{
+.icon i:hover{
     scale: 1;
     color: white;
     background-color: gray;
@@ -158,7 +174,7 @@ body{
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
-    width: 70px;
+    width: 90px;
     height: 10px;
     padding: 10px;
     display: flex;
