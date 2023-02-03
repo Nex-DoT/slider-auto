@@ -152,3 +152,40 @@ body{
     background-color: gray;
     margin: 0 0;
 }
+
+.bar{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0);
+    direction: ltr;
+}
+.bar div{
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    scale: 0.80;
+    animation: fpslow 0.5s forwards ease-in-out;
+}
+.bar div.active{
+    animation: fpshigh 0.5s forwards ease-in-out;
+}
+@keyframes fpslow{
+    0%{opacity: 1 ; scale: 1;}
+    25%{ opacity: 0.2 ; scale: 0.20 ;}
+    100%{opacity: 0.5; scale: 0.80;}
+}
+@keyframes fpshigh{
+    0%{opacity: 0.5; scale: 0.80;}
+    50%{ opacity: 0.2. ; scale: 0.20 ;}
+    100%{opacity: 1 ; scale: 1;}
+}
