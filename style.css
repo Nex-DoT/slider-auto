@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('./fonts/vazir.eot') format('eot'),
+     url('./fonts/vazir.ttf') format('truetype'),
+    url('./fonts/vazir.woff') format('woff'),
+    url('./fonts/vazir.woff2') format('woff2');
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: 'vazir';
+    box-sizing: border-box;
+    direction: rtl;
+}
+body{
+    background-color: black;
+
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+}
+.slider .slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.89;
+    transition: all 0.3s;
+}
+.slider .slide.active{
+    position: relative;
+    scale: 1;
+    visibility: visible;
+    opacity: 1;
+}
+.slider .slide.active::before{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.23);
+    content: "";
+    width: 100%;
+    height: 5;
+    bottom: 0;
+    z-index: 1000;
+    animation: minus 5s forwards ease;
+}
+@keyframes minus{
+    0%{
+        width: 100%;
+    }
+    100%{width: 0;}
+}
+
+.slider .slide .img{
+    width: 100%;
+    height: 100%;
+    background: url(./img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.slider .slide .img1{
+    width: 100%;
+    height: 100%;
+    background: url(./img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.slider .slide .img2{
+    width: 100%;
+    height: 100%;
+    background: url(./img/3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.slider .slide .img .text,
+.slider .slide .img1 .text,
+.slider .slide .img2 .text{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+
+    bottom: 0;
+    color: white;
+    background:linear-gradient(  rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.75),black);
+    flex-flow: column;
+}
+.slider .slide .img .text div,
+.slider .slide .img1 .text div,
+.slider .slide .img2 .text div{
+    margin: 50px;
+}
+.slider .slide .img .text div p,
+.slider .slide .img1 .text div p,
+.slider .slide .img2 .text div p{
+   border: 1px solid white;
+   width: 120px;
+   padding: 1px 5px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 2px;
+   margin: 10px 12px;
+   transition: 0.3s all;
+   cursor: pointer;
+}
+.slider .slide .img .text div p:hover,
+.slider .slide .img1 .text div p:hover,
+.slider .slide .img2 .text div p:hover{
+    background-color: white;
+    color: black;
+}
+.slider .icon{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slider .icon i{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    transition: 0.3s all;
+    cursor: pointer;
+    position: relative;
+    scale: 0.80;
+    z-index: 100;
+}
+.slider .icon i:hover{
+    scale: 1;
+    color: white;
+    background-color: gray;
+    margin: 0 0;
+}
